@@ -3,7 +3,7 @@ public class Main
 {
 	public static void main (String [] args)
 	{
-		Scanner gg = new Scanner (System.in);
+		Scanner leitor = new Scanner (System.in);
 
 		
 	}

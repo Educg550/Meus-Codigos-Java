@@ -15,7 +15,9 @@ public class Troco
 		System.out.println ("Insira o valor pago pelo cliente (EX: 15.00): ");
 		float pago = sc.nextFloat();
 
-		if (pago < valor)
+		double diferenca = pago - valor;
+
+		if (diferenca < 0)
 		{
 			System.out.println ("O cliente nao pagou a quantia necessaria!");
 		}
@@ -26,72 +28,66 @@ public class Troco
 
 			while (pago - 100 >= valor)
 			{
-				troco [0][0]++;
+				troco[0][0]++;
 				pago -= 100;
 			}
 			while (pago - 50 >= valor)
 			{
-				troco [0][1]++;
+				troco[0][1]++;
 				pago -= 50;
 			}
 			while (pago - 20 >= valor)
 			{
-				troco [0][2]++;
+				troco[0][2]++;
 				pago -= 20;
 			}
 			while (pago - 10 >= valor)
 			{
-				troco [0][3]++;
+				troco[0][3]++;
 				pago -= 10;
 			}
 			while (pago - 5 >= valor)
 			{
-				troco [0][4]++;
+				troco[0][4]++;
 				pago -= 5;
 			}
 			while (pago - 2 >= valor)
 			{
-				troco [0][5]++;
+				troco[0][5]++;
 				pago -= 2;
 			}
 			while (pago - 1 >= valor)
 			{
-				troco [1][0]++;
+				troco[1][0]++;
 				pago -= 1;
 			}
 			while (pago - 0.5 >= valor)
 			{
-				troco [1][1]++;
+				troco[1][1]++;
 				pago -= 0.5;
 			}
 			while (pago - 0.25 >= valor)
 			{
-				troco [1][2]++;
+				troco[1][2]++;
 				pago -= 0.25;
 			}
-			while (pago - 0.1 >= valor)
+			while (pago - 0.10 >= valor)
 			{
-				troco [1][3]++;
-				pago -= 0.1;
+				troco[1][3]++;
+				pago -= 0.10;
 			}
 			while (pago - 0.05 >= valor)
 			{
-				troco [1][4]++;
+				troco[1][4]++;
 				pago -= 0.05;
 			}
 			while (pago - 0.01 >= valor)
 			{
-				troco [1][5]++;
+				troco[1][5]++;
 				pago -= 0.01;
 			}
 
-			for (int i = 0; i < 2; i++)
-			{
-				for (int j = 0; j < 6; j++)
-				{
-					//RETOMAR DAQUI
-				}
-			}
+			System.out.printf ("O troco a ser devolvido eh de: R$%.2f\n\nNotas de R$100,00: %d\nNotas de R$50,00: %d\nNotas de R$20,00: %d\nNotas de R$10,00: %d\nNotas de R$5,00: %d\nNotas de R$2,00: %d\n\nMoedas de R$1,00: %d\nMoedas de R$0,50: %d\nMoedas de R$0,25: %d\nMoedas de R$0,10: %d\nMoedas de R$0,05: %d\nMoedas de R$0,01: %d\n", diferenca, troco[0][0], troco[0][1], troco[0][2], troco[0][3], troco[0][4], troco[0][5], troco[1][0], troco[1][1], troco[1][2], troco[1][3], troco[1][4], troco[1][5]);
 		}
 	}
 }
